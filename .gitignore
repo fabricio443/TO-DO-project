@@ -1,0 +1,13 @@
+# Build
+/target/
+*.class
+*.jar
+
+# IDEs
+/.idea/
+/.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
