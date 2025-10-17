@@ -3,7 +3,7 @@ name: 🚀 Deploy Infraestrutura para DEV
 on:
   push:
     branches:
-      - dev  # Gatilho: merge/push na branch de desenvolvimento
+      - developer  # Gatilho: merge/push na branch de desenvolvimento
 
 permissions:
   contents: read
