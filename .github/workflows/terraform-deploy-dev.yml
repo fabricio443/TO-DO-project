@@ -21,6 +21,17 @@ jobs:
       - name: 📥 Checkout do código
         uses: actions/checkout@v4
 
+      - name: ☕ Instalar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'  # ajuste se usa outra versão
+
+      - name: 🔨 Build do projeto Java (gera o .jar)
+        run: |
+          cd todo-lambda
+          mvn clean package -DskipTests
+
       - name: 🧰 Configurar credenciais AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -31,7 +42,7 @@ jobs:
       - name: 🏗️ Instalar Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.9.5  # ou a versão que você usa
+          terraform_version: 1.9.5
 
       - name: 🔧 Inicializar Terraform
         working-directory: ${{ env.TF_WORKING_DIR }}
