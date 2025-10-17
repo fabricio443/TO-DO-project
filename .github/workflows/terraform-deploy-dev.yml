@@ -29,7 +29,6 @@ jobs:
 
       - name: 🔨 Build do projeto Java (gera o .jar)
         run: |
-          cd todo-lambda
           mvn clean package -DskipTests
 
       - name: 🧰 Configurar credenciais AWS
